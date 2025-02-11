@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Shop</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="logo">
+      <img src="images/logo.png" alt="Coffee Shop Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="dropdown">
+          <a href="#">More <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#events">Events</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Video Slideshow Section -->
+  <section class="slideshow">
+    <div class="slides">
+      <video autoplay muted loop class="slide-video active">
+        <source src="videos/video1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video autoplay muted loop class="slide-video">
+        <source src="videos/video2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <video autoplay muted loop class="slide-video">
+        <source src="videos/video3.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </section>
+  
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <h2>Our Menu</h2>
+    <div class="menu-items">
+      <div class="item">
+        <img src="images/coffee1.jpg" alt="Coffee 1">
+        <h3>Espresso</h3>
+        <p>Rich and bold espresso shot.</p>
+      </div>
+      <div class="item">
+        <img src="images/coffee2.jpg" alt="Coffee 2">
+        <h3>Cappuccino</h3>
+        <p>Perfectly frothed milk with espresso.</p>
+      </div>
+      <!-- Add more items here -->
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We are passionate about coffee and strive to deliver the best experience to our customers.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Coffee Shop. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
