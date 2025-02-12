@@ -1,17 +1,17 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: #333;
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
   transition: background 0.3s ease, color 0.3s ease;
-  }
+}
 
-  body.dark-mode {
-    background: #000000;
-    color: #f3e6df;
-  }
+body.dark-mode {
+  background: #000000;
+  color: #f3e6df;
+}
 
 /* Navbar Styles */
 
@@ -26,7 +26,7 @@ header {
   z-index: 1000;
   transition: background 0.3s ease;
 }
-  
+
 .logo img {
   height: 50px;
   transition: opacity 0.3s ease;
@@ -55,7 +55,7 @@ header {
   transition: color 0.3s ease;
 }
 .nav-links li a::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 2px;
@@ -80,7 +80,6 @@ header {
 .nav-buttons {
   display: flex;
   align-items: center;
-  
 }
 
 .nav-btn {
@@ -123,7 +122,7 @@ header {
   right: 0;
   bottom: 0;
   background-color: #ccc;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 34px;
 }
 .slider:before {
@@ -134,7 +133,7 @@ header {
   left: 3px;
   bottom: 3px;
   background-color: white;
-  transition: .4s;
+  transition: 0.4s;
   border-radius: 50%;
 }
 
@@ -145,7 +144,6 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(24px);
 }
-
 
 /* Dark Mode */
 body.dark-mode {
@@ -172,7 +170,6 @@ body.dark-mode .nav-btn {
 body.dark-mode .nav-btn:hover {
   background: #000000;
 }
-
 
 /* Hamburger Menu (Mobile) */
 .hamburger {
@@ -227,81 +224,119 @@ body.dark-mode .nav-btn:hover {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
-  /* Slideshow Section */
+/* Slideshow Section */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 80%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.slide-video.active {
+  display: block;
+}
+
+/* Navigation Buttons */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 10;
+  transition: background 0.3s ease;
+}
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
   .slideshow {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    height: 60vh;
   }
-  
+
   .slides {
-    display: flex;
-    width: 100%;
-    height: 80%;
-    transition: transform 0.5s ease-in-out;
+    flex-direction: column;
   }
-  
+
   .slide-video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: none;
   }
-  
-  .slide-video.active {
-    display: block;
-  }
-  
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 15px;
-    cursor: pointer;
-    font-size: 1.5rem;
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
+
+  .prev,
   .next {
-    right: 10px;
+    font-size: 1.2rem;
+    padding: 8px;
   }
-  
-  /* Menu Section */
-  .menu {
-    padding: 50px 20px;
-    text-align: center;
-    background-color: #ffffff;
-    
-  }
-  
-  .menu h2 {
-    font-size: 2.5rem;
-    color: #000000;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .slideshow {
+    height: 50vh;
   }
 
-  .menu h3{
-    font-size: 1.4rem;
-    color: #000000;
-    margin-bottom: 1px;
-    
+  .prev,
+  .next {
+    font-size: 1rem;
+    padding: 5px;
   }
+}
 
- 
-  /* Menu Description */
+/* Menu Section */
+.menu {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.menu h2 {
+  font-size: 2.5rem;
+  color: #000000;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.menu h3 {
+  font-size: 1.4rem;
+  color: #000000;
+  margin-bottom: 1px;
+}
+
+/* Menu Description */
 .menu p {
   font-size: 1.2rem;
   color: #000000;
   margin-bottom: 10px;
-  
 }
 
 /* Light Mode */
@@ -317,33 +352,33 @@ body.dark-mode {
   --menu-text-color: #ccc;
   background-color: #1e1e1e;
 }
-  
-  .menu-items {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-  }
-  
-  .item {
-    width: 30%;
-    margin: 20px 0;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .item:hover {
-    transform: translateY(-10px);
-  }
-  
-  .item img {
-    width: 100%;
-    border-radius: 10px;
-  }
 
-  /* Price Styles */
+.menu-items {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 30%;
+  margin: 20px 0;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-10px);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Price Styles */
 .price {
   font-size: 1.2rem;
   font-weight: bold;
@@ -371,37 +406,38 @@ body.dark-mode {
   margin-right: 5px;
 }
 
-  
-  /* About and Contact Sections */
-  .about, .contact {
-    padding: 50px 20px;
-    text-align: center;
-  }
-  
-  .contact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .contact input, .contact textarea {
-    width: 300px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .contact button {
-    padding: 10px 20px;
-    background: #ff6f61;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+/* About and Contact Sections */
+.about,
+.contact {
+  padding: 50px 20px;
+  text-align: center;
+}
 
-  /* About Us Section */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact input,
+.contact textarea {
+  width: 300px;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact button {
+  padding: 10px 20px;
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* About Us Section */
 .about {
   padding: 80px 20px;
   background: #f9f9f9;
@@ -444,15 +480,10 @@ body.dark-mode {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-  
-  /* Footer */
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-  }
-
-
-  
-  
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
