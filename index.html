@@ -7,6 +7,8 @@
   <title>Coffee Shop</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
 
 </head>
 
@@ -21,6 +23,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#about">About Us</a></li>
+        <li><a href="#team">Team</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#reviews">Reviews</a></li>
@@ -237,6 +240,107 @@
       </div>
     </div>
   </section>
+
+  <!-- Reviews Section -->
+<section class="reviews container" id="review">
+  <div class="heading">
+    <h2>Customer's Reviews</h2>
+    <p>What our happy customers say about our coffee and services</p>
+  </div>
+
+  <!-- Swiper -->
+  <div class="review_swiper swiper">
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="review_box">
+          <img src="images/review1.jpg" alt="Jonas Blue" />
+          <h2>Eva Emili</h2>
+          <span>Stunning Taste & Smooth Flavor</span>
+          <p>
+            "The taste of coffee is stunning, subtle, and smooth. The brewing method brings out the best of every bean."
+          </p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="review_box">
+          <img src="images/review2.jpg" alt="Olivia Smith" />
+          <h2>Olivia Smith</h2>
+          <span>Rich Aroma & Perfect Blend</span>
+          <p>
+            "I love the rich aroma and the perfectly balanced blend. It's the best way to start my day!"
+          </p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="review_box">
+          <img src="images/review3.jpg" alt="Michael Brown" />
+          <h2>Michael Brown</h2>
+          <span>Unmatched Quality</span>
+          <p>
+            "The quality of coffee is unmatched. I appreciate the attention to detail in every cup."
+          </p>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swiper Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.review_swiper', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+    },
+  });
+</script>
+
+
 
 
   <!-- Contact Section -->
