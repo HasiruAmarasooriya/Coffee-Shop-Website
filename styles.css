@@ -4,56 +4,229 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #333;
+  transition: background 0.3s ease, color 0.3s ease;
   }
+
+  body.dark-mode {
+    background: #000000;
+    color: #f3e6df;
+  }
+
+/* Navbar Styles */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: #f3e6df;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
   
-  header {
-    display: flex;
-    justify-content: space-between;
+.logo img {
+  height: 50px;
+  transition: opacity 0.3s ease;
+}
+
+.logo-dark {
+  display: none;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+  margin: 0 15px;
+}
+
+.nav-links li a {
+  color: #000000;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #ff6f61;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.nav-links li a:hover {
+  color: #ff6f61;
+}
+
+/* Navbar Button Styles */
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  
+}
+
+.nav-btn {
+  padding: 5px 15px;
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #e65b50;
+}
+
+.nav-btn i {
+  font-size: 1.2rem;
+}
+
+/* Dark and Light Mode Toggle */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px;
+  width: 19px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #ff6f61;
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+
+/* Dark Mode */
+body.dark-mode {
+  background: #000000;
+  color: #fff;
+}
+body.dark-mode header {
+  background: #312e2d;
+}
+
+body.dark-mode .nav-links a {
+  color: #ccc;
+}
+
+body.dark-mode .nav-links a:hover {
+  color: #fff;
+}
+
+body.dark-mode .nav-btn {
+  background: #000000;
+  color: #fff;
+}
+
+body.dark-mode .nav-btn:hover {
+  background: #000000;
+}
+
+
+/* Hamburger Menu (Mobile) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger .line {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    height: 100vh;
+    width: 100%;
+    background: #333;
+    flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background: #333;
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    justify-content: center;
+    transition: right 0.3s ease;
   }
-  
-  header .logo img {
-    height: 50px;
+
+  .nav-links.active {
+    right: 0;
   }
-  
-  nav ul {
-    list-style: none;
+
+  .nav-links li {
+    margin: 20px 0;
+  }
+  .hamburger {
     display: flex;
   }
-  
-  nav ul li {
-    margin: 0 15px;
+
+  .hamburger.active .line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
   }
-  
-  nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+
+  .hamburger.active .line:nth-child(2) {
+    opacity: 0;
   }
-  
-  .dropdown {
-    position: relative;
+
+  .hamburger.active .line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
   }
-  
-  .dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #333;
-    padding: 10px;
-  }
-  
-  .dropdown:hover .dropdown-menu {
-    display: block;
-  }
-  
+}
   /* Slideshow Section */
   .slideshow {
     position: relative;
@@ -104,13 +277,46 @@ body {
   .menu {
     padding: 50px 20px;
     text-align: center;
-    background: #f9f9f9;
+    background-color: #ffffff;
+    
   }
   
   .menu h2 {
     font-size: 2.5rem;
-    margin-bottom: 20px;
+    color: #000000;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
   }
+
+  .menu h3{
+    font-size: 1.4rem;
+    color: #000000;
+    margin-bottom: 1px;
+    
+  }
+
+ 
+  /* Menu Description */
+.menu p {
+  font-size: 1.2rem;
+  color: #000000;
+  margin-bottom: 10px;
+  
+}
+
+/* Light Mode */
+body.light-mode {
+  --menu-header-color: #000000;
+  --menu-text-color: #000000;
+  background-color: #fff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --menu-header-color: #fff;
+  --menu-text-color: #ccc;
+  background-color: #1e1e1e;
+}
   
   .menu-items {
     display: flex;
@@ -136,6 +342,35 @@ body {
     width: 100%;
     border-radius: 10px;
   }
+
+  /* Price Styles */
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff6f61;
+  margin: 10px 0;
+}
+
+/* Cart Button Styles */
+.add-to-cart {
+  background: #ff6f61;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1rem;
+}
+
+.add-to-cart:hover {
+  background: #e65b50;
+}
+
+.add-to-cart i {
+  margin-right: 5px;
+}
+
   
   /* About and Contact Sections */
   .about, .contact {
@@ -165,6 +400,50 @@ body {
     border-radius: 5px;
     cursor: pointer;
   }
+
+  /* About Us Section */
+.about {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.about-image {
+  flex: 1;
+  max-width: 500px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
   
   /* Footer */
   footer {

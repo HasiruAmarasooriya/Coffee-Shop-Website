@@ -1,34 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coffee Shop</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
+
 <body>
   <!-- Header Section -->
   <header>
     <div class="logo">
-      <img src="images/logo.png" alt="Coffee Shop Logo">
+      <img src="images/logo.png" alt="Coffee Shop Logo" class="logo-light">
     </div>
     <nav>
-      <ul>
+      <ul class="nav-links">
         <li><a href="#home">Home</a></li>
         <li><a href="#menu">Menu</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="dropdown">
-          <a href="#">More <i class="fas fa-caret-down"></i></a>
-          <ul class="dropdown-menu">
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#events">Events</a></li>
-          </ul>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li class="user-section">
+          <a href="#login">Login</a> /
+          <a href="#signup">Signup</a>
+          <a href="#cart" class="cart-icon">
+            <i class="fa fa-shopping-cart"></i>
+          </a>
         </li>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle">
+          <span class="slider"></span>
+        </label>
       </ul>
+
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
     </nav>
   </header>
+
 
   <!-- Video Slideshow Section -->
   <section class="slideshow">
@@ -49,29 +66,138 @@
     <button class="prev" onclick="prevSlide()">&#10094;</button>
     <button class="next" onclick="nextSlide()">&#10095;</button>
   </section>
-  
+
   <!-- Menu Section -->
   <section id="menu" class="menu">
     <h2>Our Menu</h2>
     <div class="menu-items">
+
       <div class="item">
         <img src="images/coffee1.jpg" alt="Coffee 1">
         <h3>Espresso</h3>
         <p>Rich and bold espresso shot.</p>
+        <p class="price">$3.50</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+
       </div>
+
       <div class="item">
         <img src="images/coffee2.jpg" alt="Coffee 2">
         <h3>Cappuccino</h3>
         <p>Perfectly frothed milk with espresso.</p>
+        <p class="price">$4.00</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
       </div>
+
+
+      <div class="item">
+        <img src="images/iced-coffee.jpg" alt="iced-coffee">
+        <h3>Iced Coffee</h3>
+        <p>Iced coffee is a coffee beverage served cold</p>
+        <p class="price">$4.50</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="images/coffee1.jpg" alt="Coffee 1">
+        <h3>Espresso</h3>
+        <p>Rich and bold espresso shot.</p>
+        <p class="price">$3.50</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+
+      </div>
+
+      <div class="item">
+        <img src="images/coffee2.jpg" alt="Coffee 2">
+        <h3>Cappuccino</h3>
+        <p>Perfectly frothed milk with espresso.</p>
+        <p class="price">$4.00</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+      </div>
+
+
+      <div class="item">
+        <img src="images/iced-coffee.jpg" alt="iced-coffee">
+        <h3>Iced Coffee</h3>
+        <p>Iced coffee is a coffee beverage served cold</p>
+        <p class="price">$4.50</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="images/coffee1.jpg" alt="Coffee 1">
+        <h3>Espresso</h3>
+        <p>Rich and bold espresso shot.</p>
+        <p class="price">$3.50</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+
+      </div>
+
+      <div class="item">
+        <img src="images/coffee2.jpg" alt="Coffee 2">
+        <h3>Cappuccino</h3>
+        <p>Perfectly frothed milk with espresso.</p>
+        <p class="price">$4.00</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+      </div>
+
+
+      <div class="item">
+        <img src="images/iced-coffee.jpg" alt="iced-coffee">
+        <h3>Iced Coffee</h3>
+        <p>Iced coffee is a coffee beverage served cold</p>
+        <p class="price">$4.50</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+      </div>
+
+      <div class="item">
+        <img src="images/coffee1.jpg" alt="Coffee 1">
+        <h3>Espresso</h3>
+        <p>Rich and bold espresso shot.</p>
+        <p class="price">$3.50</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+
+      </div>
+
+      <div class="item">
+        <img src="images/coffee2.jpg" alt="Coffee 2">
+        <h3>Cappuccino</h3>
+        <p>Perfectly frothed milk with espresso.</p>
+        <p class="price">$4.00</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+      </div>
+
+
+      <div class="item">
+        <img src="images/iced-coffee.jpg" alt="iced-coffee">
+        <h3>Iced Coffee</h3>
+        <p>Iced coffee is a coffee beverage served cold</p>
+        <p class="price">$4.50</p>
+        <button class="add-to-cart"><i class="fa fa-shopping-cart"></i> Add to Cart</button>
+      </div>
+
       <!-- Add more items here -->
     </div>
   </section>
 
   <!-- About Us Section -->
   <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>We are passionate about coffee and strive to deliver the best experience to our customers.</p>
+    <div class="about-content">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>
+          At <strong>Coffee Haven</strong>, we believe that every cup of coffee tells a story.
+          Founded in 2023, our mission is to bring you the finest coffee beans from around the world,
+          roasted to perfection and brewed with care. Whether you're a fan of a bold espresso,
+          a creamy cappuccino, or a refreshing iced latte, we have something to satisfy every coffee lover.
+          Our cozy shop is more than just a place to grab a drink—it's a community where people come together
+          to share moments, ideas, and inspiration. Join us and experience the art of coffee like never before.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="images/about-us.jpg" alt="About Us Image">
+      </div>
+    </div>
   </section>
 
   <!-- Contact Section -->
@@ -92,4 +218,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
