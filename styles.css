@@ -355,19 +355,37 @@ body.dark-mode {
 
 .menu-items {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
+  z-index: 2;
+  position: relative;
 }
 
 .item {
   width: 30%;
-  margin: 10px 0;
+  margin: 20px;
   background: #fff;
-  padding: 20px;
+  padding: 3px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
+
+.item-inner {
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+}
+
+.item:hover .item-inner {
+  transform: rotateY(180deg);
+}
+
 
 .item:hover {
   transform: translateY(-10px);
