@@ -364,11 +364,7 @@ body.dark-mode {
 .item {
   width: 30%;
   margin: 20px;
-  background: #fff;
-  padding: 3px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  perspective: 1000px;
 }
 
 .item-inner {
@@ -386,6 +382,16 @@ body.dark-mode {
   transform: rotateY(180deg);
 }
 
+.coffee-img {
+  width: 100%;
+  border-radius: 15px;
+  transition: transform 0.6s;
+  transform-origin: center;
+}
+
+.item:hover .coffee-img {
+  transform: rotateY(360deg) scale(1.1);
+}
 
 .item:hover {
   transform: translateY(-10px);
@@ -428,6 +434,39 @@ body.dark-mode {
 .add-to-cart i {
   margin-right: 5px;
 }
+
+/* Steam Animation */
+@keyframes steam {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-20px) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px) scale(1.4);
+  }
+}
+
+.coffee-img::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  width: 30px;
+  height: 60px;
+  background: url('images/steam.png') center/contain no-repeat;
+  animation: steam 4s infinite;
+  opacity: 0;
+}
+
+.item:hover .coffee-img::after {
+  opacity: 1;
+}
+
 
 /* Responsive Design */
 @media (max-width: 992px) {
