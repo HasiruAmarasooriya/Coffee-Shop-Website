@@ -462,7 +462,7 @@ body.dark-mode {
 }
 
 
-/* About and Contact Sections */
+/* Contact Sections */
 .contact {
   padding: 50px 20px;
   text-align: center;
@@ -490,6 +490,35 @@ body.dark-mode {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background 0.3s ease;
+}
+.contact button:hover {
+  background: #e65b50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact input,
+  .contact textarea {
+    width: 80%;  /* Adjusted to take 80% of the screen width */
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 30px 10px;
+  }
+
+  .contact input,
+  .contact textarea {
+    width: 100%;  /* Full width on very small screens */
+    max-width: 300px;  /* Limits max width for better look */
+  }
+
+  .contact button {
+    width: 100%;  /* Full width for the button */
+    max-width: 200px;
+  }
 }
 
 /* About Us Section */
