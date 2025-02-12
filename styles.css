@@ -314,13 +314,13 @@ body.dark-mode .nav-btn:hover {
 
 /* Menu Section */
 .menu {
-  padding: 50px 20px;
+  padding: 30px 10px;
   text-align: center;
   background-color: #ffffff;
 }
 
 .menu h2 {
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   color: #000000;
   margin-bottom: 10px;
   transition: color 0.3s ease;
@@ -334,7 +334,7 @@ body.dark-mode .nav-btn:hover {
 
 /* Menu Description */
 .menu p {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #000000;
   margin-bottom: 10px;
 }
@@ -357,11 +357,12 @@ body.dark-mode {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  
 }
 
 .item {
   width: 30%;
-  margin: 20px 0;
+  margin: 10px 0;
   background: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -376,6 +377,7 @@ body.dark-mode {
 .item img {
   width: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 /* Price Styles */
@@ -405,6 +407,60 @@ body.dark-mode {
 .add-to-cart i {
   margin-right: 5px;
 }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .item {
+    width: 100%;
+  }
+
+  .menu h2 {
+    font-size: 1.8rem;
+  }
+
+  .menu p {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1rem;
+  }
+
+  .add-to-cart {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    padding: 20px 5px;
+  }
+
+  .menu h2 {
+    font-size: 1.5rem;
+  }
+
+  .menu p {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 0.9rem;
+  }
+
+  .add-to-cart {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
+
 
 /* About and Contact Sections */
 .about,
