@@ -375,10 +375,14 @@ body.dark-mode {
 
 .item img {
   width: 100%;
+  height: 60%;
   border-radius: 10px;
   object-fit: cover;
+  transition: transform 0.3s ease-in-out;
 }
-
+.item:hover img {
+  transform: scale(1.05);
+}
 /* Price Styles */
 .price {
   font-size: 1.2rem;
@@ -974,10 +978,94 @@ body.dark-mode {
 }
 
 
-/* Footer */
-footer {
-  background: #333;
-  color: #fff;
+/* Footer Section */
+.footer {
+  padding: 60px 20px;
+  background-color: #222;
+  color: #ccc;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
   text-align: center;
-  padding: 20px;
 }
+
+.footer_box {
+  padding: 10px;
+}
+
+.footer_box .logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff6f61;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer_box .logo:hover {
+  color: #e65b50;
+}
+
+.footer_box h3 {
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer_box a {
+  display: block;
+  font-size: 1rem;
+  color: #ccc;
+  text-decoration: none;
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+.footer_box a:hover {
+  color: #ff6f61;
+}
+
+.social a {
+  display: inline-block;
+  color: #fff;
+  background: #ff6f61;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background 0.3s ease;
+}
+
+.social a:hover {
+  background: #e65b50;
+}
+
+.social a i {
+  font-size: 1.2rem;
+}
+
+/* Copyright */
+.copyright {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #111;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .social a {
+    margin: 5px;
+  }
+}
+
