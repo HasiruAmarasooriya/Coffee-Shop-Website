@@ -174,25 +174,28 @@
   </section>
 
 
-  <!-- About Us Section -->
-  <section id="about" class="about">
-    <div class="about-content">
-      <div class="about-text">
-        <h2>About Us</h2>
-        <p>
-          At <strong>Coffee Haven</strong>, we believe that every cup of coffee tells a story.
-          Founded in 2023, our mission is to bring you the finest coffee beans from around the world,
-          roasted to perfection and brewed with care. Whether you're a fan of a bold espresso,
-          a creamy cappuccino, or a refreshing iced latte, we have something to satisfy every coffee lover.
-          Our cozy shop is more than just a place to grab a drink—it's a community where people come together
-          to share moments, ideas, and inspiration. Join us and experience the art of coffee like never before.
-        </p>
-      </div>
-      <div class="about-image">
-        <img src="images/about-us.jpg" alt="About Us Image">
-      </div>
+<!-- About Us Section -->
+<section id="about" class="about">
+  <div class="about-background"></div>
+  <div class="about-content">
+    <div class="about-image">
+      <img src="images/about-us.jpg" alt="About Us Image">
     </div>
-  </section>
+    <div class="about-text glass-card">
+      <h2>About Us</h2>
+      <p>
+        At <strong>Coffee Haven</strong>, we believe that every cup of coffee tells a story.
+        Founded in 2023, our mission is to bring you the finest coffee beans from around the world,
+        roasted to perfection and brewed with care. Whether you're a fan of a bold espresso,
+        a creamy cappuccino, or a refreshing iced latte, we have something to satisfy every coffee lover.
+        Our cozy shop is more than just a place to grab a drink—it's a community where people come together
+        to share moments, ideas, and inspiration. Join us and experience the art of coffee like never before.
+      </p>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+  </div>
+</section>
+
 
   <!-- Team Section -->
   <section class="team container" id="team">
@@ -501,16 +504,31 @@
   </section>
 
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+  <div class="contact-container">
+    <div class="contact-illustration">
+      <img src="images/contact-illustration.png" alt="Contact Us">
+    </div>
+    <form class="contact-form">
+      <div class="input-group">
+        <img src="images/name-icon.png" alt="Name Icon" class="input-icon">
+        <input type="text" placeholder="Your Name" required>
+      </div>
+      <div class="input-group">
+        <img src="images/email-icon.png" alt="Email Icon" class="input-icon">
+        <input type="email" placeholder="Your Email" required>
+      </div>
+      <div class="input-group">
+        <img src="images/message-icon.png" alt="Message Icon" class="input-icon">
+        <textarea placeholder="Your Message" required></textarea>
+      </div>
       <button type="submit">Send Message</button>
     </form>
-  </section>
+  </div>
+</section>
+
 
   <!-- Footer -->
   <section class="footer container">
