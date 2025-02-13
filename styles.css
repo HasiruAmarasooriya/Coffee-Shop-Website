@@ -836,7 +836,7 @@ body.dark-mode {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #ffcc33 0%, #ff9966 100%);
+  background: linear-gradient(135deg, #fff0be 0%, #f3e6df 100%);
   opacity: 0.2;
   z-index: -1;
   animation: gradientAnimation 10s ease infinite;
